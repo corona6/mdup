@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @markdown.key %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @markdown.data %>
+</p>
+
+<p>
+  <strong>Pass:</strong>
+  <%= @markdown.pass %>
+</p>
+
+<%= link_to 'Edit', edit_markdown_path(@markdown) %> |
+<%= link_to 'Back', markdowns_path %>

@@ -1,0 +1,30 @@
+<h1>Listing markdowns</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Data</th>
+      <th>Pass</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @markdowns.each do |markdown| %>
+      <tr>
+        <td><%= markdown.key %></td>
+        <td><%= markdown.pass %></td>
+        <td><%= link_to 'Show', markdown %></td>
+        <td><%= link_to 'Edit', edit_markdown_path(markdown) %></td>
+        <td><%= link_to 'Destroy', markdown, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Markdown', new_markdown_path %>
