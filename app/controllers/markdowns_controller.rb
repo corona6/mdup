@@ -27,7 +27,7 @@ class MarkdownsController < ApplicationController
     markdown = params[:data]
     a = ('a'..'z').to_a + ('A'..'Z').to_a + ('0'..'9').to_a
     code = (
-             Array.new(5) do
+             Array.new(8) do
                a[rand(a.size)]
              end
             ).join
