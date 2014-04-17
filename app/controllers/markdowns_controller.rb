@@ -1,5 +1,5 @@
 class MarkdownsController < ApplicationController
-  before_action :set_markdown, only: [:show, :edit, :update, :destroy]
+  before_action :set_markdown, only: [:show, :edit, :destroy]
 
   # GET /markdowns
   # GET /markdowns.json
@@ -50,8 +50,9 @@ class MarkdownsController < ApplicationController
   # PATCH/PUT /markdowns/1
   # PATCH/PUT /markdowns/1.json
   def update
+    @markdown = Markdown.find(params[:id])
     respond_to do |format|
-      if @markdown.update(markdown_params)
+      if @markdown.pass == params[:markdown][:pass] && @markdown.update_attribute(:data, params[:data].read)
         format.html { redirect_to @markdown, notice: 'Markdown was successfully updated.' }
         format.json { head :no_content }
       else
@@ -74,7 +75,7 @@ class MarkdownsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_markdown
-      @markdown = Markdown.find(params[:id])
+      @markdown = Markdown.find_by(key: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
