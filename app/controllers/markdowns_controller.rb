@@ -34,7 +34,7 @@ class MarkdownsController < ApplicationController
     @markdown = Markdown.new
     @markdown.key = code
     @markdown.data = markdown.read
-    @markdown.pass = params[:pass]
+    @markdown.pass = params[:markdown][:pass]
 
     respond_to do |format|
       if @markdown.save
