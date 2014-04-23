@@ -7,6 +7,9 @@ Mdup::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'markdowns#new'
 
+  get ':id' => 'markdowns#show'
+  get ':id/edit' => 'markdowns#edit'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
