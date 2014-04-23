@@ -1,5 +1,5 @@
 class MarkdownsController < ApplicationController
-  before_action :set_markdown, only: [:show, :edit, :destroy]
+  before_action :set_markdown, only: [:show, :edit, :download, :text]
   before_action :set_markdown_id, only: [:update, :destroy]
 
   # GET /markdowns
@@ -72,6 +72,16 @@ class MarkdownsController < ApplicationController
         format.json { head :no_content }
       end
     end
+  end
+
+  def download
+    file_name = 'mdup_' + @markdown.key + '.md'
+    send_data(@markdown.data, :filename => file_name, :content_type => 'text/x-markdown; charset=UTF-8')
+  end
+
+  def text
+    response.headers['Content-Type'] = 'text/plain; charset=UTF-8'
+    render :text => @markdown.data
   end
 
   private

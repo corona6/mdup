@@ -9,6 +9,8 @@ Mdup::Application.routes.draw do
 
   get ':id' => 'markdowns#show'
   get ':id/edit' => 'markdowns#edit'
+  get ':id/download' => 'markdowns#download'
+  get ':id/text' => 'markdowns#text'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
