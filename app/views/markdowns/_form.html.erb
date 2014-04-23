@@ -1,3 +1,4 @@
+<% @markdown.pass = "" %>
 <%= form_for(@markdown, :html => {:enctype => "multipart/form-data"}) do |f| %>
   <% if @markdown.errors.any? %>
     <div id="error_explanation">
@@ -12,8 +13,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :key %><br>
-    <%= f.text_field :key %>
+    <%= f.hidden_field :key %>
   </div>
   <div class="field">
     <input name="data" type="file" />

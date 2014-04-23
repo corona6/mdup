@@ -4,5 +4,10 @@
 
 <%= link_to 'Destroy', @markdown, method: :delete, data: { confirm: 'Are you sure?' } %>
 
+<%= form_for(@markdown, :html => { :method => :delete}) do |f| %>
+  <%= f.text_field :pass %>
+  <%= f.submit %>
+<% end %>
+
 <%= link_to 'Show', @markdown %> |
 <%= link_to 'Back', markdowns_path %>
