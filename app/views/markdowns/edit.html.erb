@@ -1,13 +1,10 @@
-<h1>Editing markdown</h1>
+<h1>Edit</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Destroy', @markdown, method: :delete, data: { confirm: 'Are you sure?' } %>
+<h1>Delete</h1>
 
 <%= form_for(@markdown, :html => { :method => :delete}) do |f| %>
-  <%= f.text_field :pass %>
-  <%= f.submit %>
+  <%= f.text_field :pass, :placeholder => 'password' %>
+  <%= f.submit 'delete' %>
 <% end %>
-
-<%= link_to 'Show', @markdown %> |
-<%= link_to 'Back', markdowns_path %>
