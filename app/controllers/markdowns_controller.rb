@@ -80,8 +80,7 @@ class MarkdownsController < ApplicationController
   end
 
   def text
-    response.headers['Content-Type'] = 'text/plain; charset=UTF-8'
-    render :text => @markdown.data
+    render :text => @markdown.data.to_s, :content_type => Mime::TEXT
   end
 
   private
