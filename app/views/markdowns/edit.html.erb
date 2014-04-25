@@ -8,3 +8,9 @@
   <%= f.text_field :pass, :placeholder => 'password' %>
   <%= f.submit 'delete' %>
 <% end %>
+
+<div style="margin-top:2em;">
+  <a href="/<%= @markdown.key %>">back</a>
+  <div align="right">Hosting on <%= link_to 'mdup', root_path %>.</div> 
+</div>
+

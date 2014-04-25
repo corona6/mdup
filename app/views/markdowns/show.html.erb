@@ -1,3 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <%= markdown(@markdown.data) %>
+
+<a href="/<%= @markdown.key %>/edit">/edit</a>
+<a href="/<%= @markdown.key %>/download">/download</a>
+<a href="/<%= @markdown.key %>/text">/text</a>
+
+<div align="right">Hosting on <%= link_to 'mdup', root_path %>.</div> 
