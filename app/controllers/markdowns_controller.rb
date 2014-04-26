@@ -39,7 +39,7 @@ class MarkdownsController < ApplicationController
 
     respond_to do |format|
       if @markdown.save
-        format.html { redirect_to @markdown, notice: 'Markdown was successfully created.' }
+        format.html { redirect_to '/' + @markdown.key, notice: 'Markdown was successfully created.' }
         format.json { render action: 'show', status: :created, location: @markdown }
       else
         format.html { render action: 'new' }
@@ -53,7 +53,7 @@ class MarkdownsController < ApplicationController
   def update
     respond_to do |format|
       if @markdown.pass == params[:markdown][:pass] && @markdown.update_attribute(:data, params[:data].read)
-        format.html { redirect_to @markdown, notice: 'Markdown was successfully updated.' }
+        format.html { redirect_to '/' + @markdown.key, notice: 'Markdown was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -68,7 +68,12 @@ class MarkdownsController < ApplicationController
     if @markdown.pass == params[:markdown][:pass]
       @markdown.destroy
       respond_to do |format|
-        format.html { redirect_to markdowns_url }
+        format.html { redirect_to root_path}
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to '/' + @markdown.key}
         format.json { head :no_content }
       end
     end
