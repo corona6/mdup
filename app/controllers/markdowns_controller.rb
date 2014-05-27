@@ -1,6 +1,7 @@
 class MarkdownsController < ApplicationController
   before_action :set_markdown, only: [:show, :edit, :download, :text]
   before_action :set_markdown_id, only: [:update, :destroy]
+  before_action :unknown_id_check, only: [:show, :edit, :update, :destroy, :download, :text]
 
   # GET /markdowns
   # GET /markdowns.json
@@ -96,6 +97,11 @@ class MarkdownsController < ApplicationController
 
     def set_markdown_id
       @markdown = Markdown.find(params[:id])
+    end
+
+    # unknown id redirect to top page
+    def unknown_id_check
+      return redirect_to :root if @markdown.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
