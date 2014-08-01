@@ -35,7 +35,7 @@ class MarkdownsController < ApplicationController
             ).join
     @markdown = Markdown.new
     @markdown.key = code
-    @markdown.data = markdown.read
+    @markdown.data = markdown.nil? ? params[:markdown][:data] : markdown.read
     @markdown.pass = params[:markdown][:pass]
 
     respond_to do |format|
@@ -52,8 +52,9 @@ class MarkdownsController < ApplicationController
   # PATCH/PUT /markdowns/1
   # PATCH/PUT /markdowns/1.json
   def update
+    data = params[:data].nil? ? params[:markdown][:data] : params[:data].read
     respond_to do |format|
-      if @markdown.pass == params[:markdown][:pass] && @markdown.update_attribute(:data, params[:data].read)
+      if @markdown.pass == params[:markdown][:pass] && @markdown.update_attribute(:data, data)
         format.html { redirect_to '/' + @markdown.key, notice: 'Markdown was successfully updated.' }
         format.json { head :no_content }
       else

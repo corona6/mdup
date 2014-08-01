@@ -12,6 +12,8 @@
     </div>
   <% end %>
   <%= f.hidden_field :key %>
+  <%= f.text_area :data %>
+  OR
   <input name="data" type="file" />
   <%= f.text_field :pass, :placeholder => 'password for edit' %>
   <%= f.submit 'upload markdown' %>
