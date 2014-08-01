@@ -2,8 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@font-face
+{
+font-family: mplus-1p-regular;
+src: url('http://mplus-fonts.sourceforge.jp/webfonts/mplus-1p-regular.ttf')
+     format("truetype");
+}
+
 body {
-  font-family: Helvetica, arial, sans-serif;
+  font-family: mplus-1p-regular, Helvetica, arial, sans-serif;
   font-size: 14px;
   line-height: 1.6;
   padding-top: 10px;
@@ -380,4 +387,5 @@ pre {
 textarea {
   width: 100%;
   height: 20em;
+  font-size: 14px;
 }
