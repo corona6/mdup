@@ -2,8 +2,9 @@
 
 <%= markdown(@markdown.data) %>
 
-<a href="/<%= @markdown.key %>/edit">/edit</a>
-<a href="/<%= @markdown.key %>/download">/download</a>
-<a href="/<%= @markdown.key %>/text">/text</a>
-
-<div align="right">Hosting on <%= link_to 'mdup', root_path %>.</div> 
+<div style="margin-top:2em;">
+	<a href="/<%= @markdown.key %>/edit">/edit</a>
+	<a href="/<%= @markdown.key %>/download">/download</a>
+	<a href="/<%= @markdown.key %>/text">/text</a>
+	<div align="right">Hosting on <%= link_to 'mdup', root_path %>.</div>
+</div>
