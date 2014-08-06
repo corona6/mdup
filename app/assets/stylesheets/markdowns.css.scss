@@ -4,13 +4,13 @@
 
 @font-face
 {
-font-family: mplus-1p-regular;
-src: url('http://mplus-fonts.sourceforge.jp/webfonts/mplus-1p-regular.ttf')
-     format("truetype");
+font-family: noto-sans-jp;
+src: url('NotoSansJP-Regular.otf')
+     format("opentype");
 }
 
 body {
-  font-family: mplus-1p-regular, Helvetica, arial, sans-serif;
+  font-family: noto-sans-jp, Helvetica, arial, sans-serif;
   font-size: 14px;
   line-height: 1.6;
   padding-top: 10px;
