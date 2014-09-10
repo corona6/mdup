@@ -4,13 +4,12 @@
 
 <h1>Delete</h1>
 
-<%= form_for(@markdown, :html => { :method => :delete}) do |f| %>
-  <%= f.text_field :pass, :placeholder => 'password' %>
+<%= form_for(@markdown, :html => {:method => :delete}) do |f| %>
+  <%= f.password_field :pass, :placeholder => 'password' %>
   <%= f.submit 'delete' %>
 <% end %>
 
 <div style="margin-top:2em;">
   <a href="/<%= @markdown.key %>">back</a>
-  <div align="right">Hosting on <%= link_to 'mdup', root_path %>.</div> 
+  <div align="right">Hosting on <%= link_to 'mdup', root_path %>.</div>
 </div>
-
