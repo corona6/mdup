@@ -2,15 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@font-face
-{
-font-family: noto-sans-jp;
-src: url('NotoSansJP-Regular.otf')
-     format("opentype");
-}
-
 body {
-  font-family: noto-sans-jp, Helvetica, arial, sans-serif;
   font-size: 14px;
   line-height: 1.6;
   padding-top: 10px;
