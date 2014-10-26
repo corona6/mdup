@@ -2,7 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
 body {
+  font-family: 'Noto Sans Japanese', serif;
   font-size: 14px;
   line-height: 1.6;
   padding-top: 10px;
